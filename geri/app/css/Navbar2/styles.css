@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #473C38;
+    font-family: 'EB Garamond', serif;
+    margin-top: 138px;
+  }
+  
+  .navbar-logo {
+    height: 30px;
+    width: auto;
+    margin-right: 1rem; /* Pushes the logo slightly closer to the links */
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 2rem; /* Applies spacing between individual links */
+    list-style: none;
+    padding-left: 0rem; /* Shifts the links slightly closer to the logo */
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-links a:hover {
+    color: black; /* Highlight color on hover */
+  }
+  
+  .button2{
+    font-style: oblique;
+    color:aqua;
+  }

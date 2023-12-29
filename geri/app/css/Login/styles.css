@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Apply a global style to set the color of all text to black */
+body, div, a {
+    color: black;
+  }
+  
+  /* Add specific styles for your LoginPage component if needed */
+  .linkpagebg {
+    /* Add any additional styles for the parent container */
+    display: block;
+  }
+  
+  /* Add styles for the LOGIN text */
+  .linkpagebg div {
+    font-size: 24px; /* Example font size */
+    font-weight: bold; /* Example font weight */
+    /* Add any additional styles for the LOGIN text */
+  }
+  
+  /* Add styles for the links */
+  .linkpagebg a {
+    display: block; /* Make links block-level for better spacing */
+    margin-bottom: 10px; /* Example margin between links */
+    /* Add any additional styles for the links */
+  }
+  
