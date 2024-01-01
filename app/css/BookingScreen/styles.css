@@ -1,0 +1,19 @@
+.booking-screen {
+  background-image: url("https://cdn.discordapp.com/attachments/775346740122484750/1191418334181339246/CS_127_MP_2.png?ex=65a55dca&is=6592e8ca&hm=f68aa7913cd5486448a05e42b2137cd18251f7023338b09c7dab19081b0e26df&");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+  .text{
+    color: rgb(0, 0, 0) ;
+    font-weight: bolder;
+  }
+  
+  .button1{
+    border: 5px;
+    border-radius: 5px;
+    border-width: 10px;
+    color: rgb(137, 15, 15) ;
+  }
+
