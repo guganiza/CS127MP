@@ -14,7 +14,6 @@ const LoginPage = () => {
       <Link href= {"/housekeeping"}> Login as Housekeeping </Link> <br></br>
       <Link href= {"/kitchen"}> Login as Kitchen </Link> <br></br>
       <Link href= {"/supervisor"}> Login as Supervisor </Link> <br></br>
-      <Link href= {"/admin"}> Login as Admin </Link> <br></br>
      </div>
   )
 }

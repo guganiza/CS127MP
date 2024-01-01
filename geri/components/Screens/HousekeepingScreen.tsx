@@ -1,5 +1,6 @@
 import React from 'react'
-import Navbar2 from './Navbar2';
+import Navbar2 from './Navbar2'
+import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/HousekeepingScreen/styles.css"
 
 function HousekeepingScreen() {
   return (
