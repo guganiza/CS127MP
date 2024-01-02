@@ -6,10 +6,12 @@ import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/HousekeepingScree
 function HousekeepingScreen() {
   return (
     <div>
+      <body className='housekeeping'>
       <Navbar2 userRole={'housekeeping'} />
       HOUSEKEEPING SCREEN
       <br></br><br></br>
       INSERT TABLE OF SERVICES AVAILED ARRANGED BY BRN
+      </body>
     </div>
   )
 }

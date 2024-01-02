@@ -7,10 +7,12 @@ import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/KitchenScreen/sty
 function KitchenScreen() {
   return (
     <div>
+      <body className='kitchen'>
       <Navbar2 userRole={'kitchen'} />
       KITCHEN SCREEN
       <br></br><br></br>
       INSERT TABLE OF SERVICES AVAILED ARRANGED BY BRN
+      </body>
     </div>
   )
 }

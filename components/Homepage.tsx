@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Homepage/styles.css"
 // import "app/css/Homepage/styles.css"; // Import the CSS file for styling
@@ -10,7 +9,7 @@ const Homepage = () => {
   return (
     <div className="homepage"> {/* Apply styles using a class */}
       <Navbar />
-      <h1 className="text">hello</h1>
+    
     </div>
   );
 };

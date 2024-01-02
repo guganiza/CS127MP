@@ -7,6 +7,7 @@ import Popup from './Popup'
 import { useState } from 'react'
 import ContactScreen from './ContactScreen';
 import NewBooking from '../Popups/NewBooking';
+import AddCharge from '../Popups/AddCharge';
 
 function Navbar({ userRole }: { userRole: string }) {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -77,12 +78,13 @@ function Navbar({ userRole }: { userRole: string }) {
           <button onClick={() => setButtonPopup(true)}>Add Charge</button>
             {buttonPopup && (
               <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-              <h3 className='text'>Add Charge</h3>
+              {/* <h3 className='text'>Add Charge</h3>
               <p>Room ID / BRN: dropdown</p>
               <p>*insert table of services</p>
               <p>*total bill*</p>
               <p>*add button to add more rows*</p>
-              <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button>
+              <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> */}
+              <AddCharge />
               </Popup>
             )}
         </li>

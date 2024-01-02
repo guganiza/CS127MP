@@ -12,7 +12,8 @@ function SupervisorScreen() {
 
   return (
     <div>
-    <Navbar2 userRole={'supervisor'} />
+      <body className='supervisor'>
+      <Navbar2 userRole={'supervisor'} />
     SUPERVISOR SCREEN
     <br></br><br></br>
     INSERT TABLE OF EMPLOYEES AND THEIR PAYROLL + RELEASE PAYMENT BUTTON
@@ -27,6 +28,8 @@ function SupervisorScreen() {
         <button className='button2' onClick={() => setButtonPopup(true)}>UPDATE SALARY</button>
         </Popup>
         )}
+      </body>
+   
     </div>
   )
 }

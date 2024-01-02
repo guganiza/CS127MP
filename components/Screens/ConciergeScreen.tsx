@@ -7,10 +7,12 @@ import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/ConciergeScreen/s
 function ConciergeScreen() {
   return (
     <div>
+      <body className= "concierge">
       <Navbar2 userRole={'concierge'} />
       CONCIERGE SCREEN
       <br></br><br></br>
       INSERT TABLE OF SERVICES AVAILED ARRANGED BY BRN
+      </body>
     </div>
   )
 }
