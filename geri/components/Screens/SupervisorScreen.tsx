@@ -5,13 +5,15 @@ import Navbar2 from './Navbar2';
 import Popup from './Popup'
 import { useState } from 'react'
 import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/SupervisorScreen/styles.css"; 
+//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/SupervisorScreen/styles.css";
 
 function SupervisorScreen() {
   const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <div>
-    <Navbar2 userRole={'supervisor'} />
+      <body className='supervisor'>
+      <Navbar2 userRole={'supervisor'} />
     SUPERVISOR SCREEN
     <br></br><br></br>
     INSERT TABLE OF EMPLOYEES AND THEIR PAYROLL + RELEASE PAYMENT BUTTON
@@ -26,6 +28,8 @@ function SupervisorScreen() {
         <button className='button2' onClick={() => setButtonPopup(true)}>UPDATE SALARY</button>
         </Popup>
         )}
+      </body>
+   
     </div>
   )
 }

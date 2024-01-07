@@ -8,6 +8,9 @@ function ContactScreen() {
         Contact Screen
         <br></br>
         INSERT DESIGN
+
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+
     </div>
   )
 }

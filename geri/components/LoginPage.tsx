@@ -9,7 +9,7 @@ const LoginPage = () => {
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 
       <div>LOGIN</div>
-      <Link href= {"/frontdesk"}> Login as Frontdesk </Link> <br></br>
+      <Link href= {"/checkedin"}> Login as Frontdesk </Link> <br></br>
       <Link href= {"/concierge"}> Login as Concierge </Link> <br></br>
       <Link href= {"/housekeeping"}> Login as Housekeeping </Link> <br></br>
       <Link href= {"/kitchen"}> Login as Kitchen </Link> <br></br>
