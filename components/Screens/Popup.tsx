@@ -1,6 +1,7 @@
 import React from 'react'
-// import "app/css/Popup/styles.css"; // Import the CSS file for styling
+// import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Popup/styles.css"; 
 import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Popup/styles.css";
+
 
 function Popup(props){
     return(props.trigger) ? (
@@ -13,4 +14,3 @@ function Popup(props){
     ) : "";
 }
 export default Popup
-
