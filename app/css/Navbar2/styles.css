@@ -71,3 +71,15 @@
   font-style: oblique;
   color:aqua;
 }
+
+.navbar-buttons {
+  background: transparent;
+  border: none;
+  color: white;
+  transition: color 0.3s; /* Smooth transition for color change */
+  padding: 0%;
+}
+
+.navbar-buttons:hover {
+  color: black;
+}

@@ -1,0 +1,64 @@
+/* AddChargeScreen.css */
+
+.charge-screen-container {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Add this line to hide any overflowing content */
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .room-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .room-list li {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  
+  .charge-table {
+    width: calc(100% - 20px); /* Adjust the width to fit within the container */
+    margin-bottom: 20px;
+    overflow-x: auto; /* Add this line to enable horizontal scrolling if needed */
+  }
+  
+  .charge-table th, .charge-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .total {
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-charge-button, .finish-charging-button {
+    padding: 12px;
+    background-color: #473C38;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .add-charge-button:hover, .finish-charging-button:hover {
+    background-color: #333;
+  }
+  

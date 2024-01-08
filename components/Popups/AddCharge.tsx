@@ -1,144 +1,5 @@
-
-
-// import React, { useState, useEffect } from 'react';
-
-// const AddChargeScreen = () => {
-//   // Mock data for room IDs
-//   const roomIds = ['ABCD123', 'ABCD124'];
-
-//   const [searchQuery, setSearchQuery] = useState('');
-//   const [filteredRoomIds, setFilteredRoomIds] = useState([]);
-//   const [selectedRoomId, setSelectedRoomId] = useState('');
-
-//   const handleSearchChange = (e) => {
-//     const query = e.target.value;
-//     setSearchQuery(query);
-//     const filteredIds = roomIds.filter((roomId) => roomId.includes(query));
-//     setFilteredRoomIds(filteredIds);
-//   };
-
-//   const handleRoomSelection = (roomId) => {
-//     setSelectedRoomId(roomId);
-//     setSearchQuery(roomId); // Set search query to the selected room ID
-//     setFilteredRoomIds([]); // Clear filtered room IDs
-//   };
-
-//   // Mock data for services and items
-//   const servicesItems = ['Service A', 'Service B', 'Service C'];
-//   const [charges, setCharges] = useState([]);
-//   const [total, setTotal] = useState(0);
-
-//   const handleAddCharge = () => {
-//     const newCharge = {
-//       serviceId: charges.length + 1, // Increment for a unique ID (replace with actual logic)
-//       serviceItem: '',
-//       quantity: 1,
-//       price: 0,
-//     };
-//     setCharges([...charges, newCharge]);
-//   };
-
-//   const handleChargeChange = (index, field, value) => {
-//     const updatedCharges = [...charges];
-//     updatedCharges[index][field] = value;
-
-//     // Update total when quantity or price changes
-//     if (field === 'quantity' || field === 'price') {
-//       const newTotal = updatedCharges.reduce((acc, charge) => acc + charge.quantity * charge.price, 0);
-//       setTotal(newTotal);
-//     }
-
-//     setCharges(updatedCharges);
-//   };
-
-//   const handleFinishCharging = () => {
-//     // Add logic to handle the finishing of charging, e.g., send data to the server
-//     console.log('Charging finished:', charges);
-//     setCharges([]); // Clear charges after finishing
-//     setTotal(0); // Reset total
-//   };
-
-//   return (
-//     <div>
-//       {/* Enter Room ID/BRN Label and Search Bar */}
-//       <label htmlFor="roomSearch">Enter Room ID/BRN:</label>
-//       <input
-//         type="text"
-//         id="roomSearch"
-//         placeholder="Room ID / BRN"
-//         value={searchQuery}
-//         onChange={handleSearchChange}
-//       />
-//       {filteredRoomIds.length > 0 && (
-//         <ul>
-//           {filteredRoomIds.map((roomId) => (
-//             <li key={roomId} onClick={() => handleRoomSelection(roomId)}>
-//               {roomId}
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-
-//       {/* Charge Table */}
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Service ID</th>
-//             <th>Services/Items</th>
-//             <th>Quantity</th>
-//             <th>Price</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {charges.map((charge, index) => (
-//             <tr key={charge.serviceId}>
-//               <td>{charge.serviceId}</td>
-//               <td>
-//                 <select
-//                   value={charge.serviceItem}
-//                   onChange={(e) => handleChargeChange(index, 'serviceItem', e.target.value)}
-//                 >
-//                   <option value="">Select Service/Item</option>
-//                   {servicesItems.map((item) => (
-//                     <option key={item} value={item}>
-//                       {item}
-//                     </option>
-//                   ))}
-//                 </select>
-//               </td>
-//               <td>
-//                 <input
-//                   type="number"
-//                   value={charge.quantity}
-//                   onChange={(e) => handleChargeChange(index, 'quantity', parseInt(e.target.value, 10))}
-//                 />
-//               </td>
-//               <td>
-//                 <input
-//                   type="number"
-//                   value={charge.price}
-//                   onChange={(e) => handleChargeChange(index, 'price', parseFloat(e.target.value))}
-//                 />
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-//       {/* Total */}
-//       <div>Total: {total}</div>
-
-//       {/* Buttons */}
-//       <button onClick={handleAddCharge}>Add Charge</button>
-//       <button onClick={handleFinishCharging}>Finish Charging</button>
-//     </div>
-//   );
-// };
-
-// export default AddChargeScreen;
-
-
 import React, { useState, useEffect } from 'react';
+import "/Users/davidraphael/Documents/CS127/CS127MP/mp/components/Popups/css/AddCharge.css";
 
 const AddChargeScreen = () => {
   // Mock data for room IDs
@@ -208,28 +69,30 @@ const AddChargeScreen = () => {
   };
 
   return (
-    <div>
+    <div className="charge-screen-container">
       {/* Enter Room ID/BRN Label and Search Bar */}
-      <label htmlFor="roomSearch">Enter Room ID/BRN:</label>
-      <input
-        type="text"
-        id="roomSearch"
-        placeholder="Room ID / BRN"
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
-      {filteredRoomIds.length > 0 && (
-        <ul>
-          {filteredRoomIds.map((roomId) => (
-            <li key={roomId} onClick={() => handleRoomSelection(roomId)}>
-              {roomId}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="search-container">
+        <label htmlFor="roomSearch">Enter Room ID/BRN:</label>
+        <input
+          type="text"
+          id="roomSearch"
+          placeholder="Room ID / BRN"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+        {filteredRoomIds.length > 0 && (
+          <ul className="room-list">
+            {filteredRoomIds.map((roomId) => (
+              <li key={roomId} onClick={() => handleRoomSelection(roomId)}>
+                {roomId}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       {/* Charge Table */}
-      <table>
+      <table className="charge-table">
         <thead>
           <tr>
             <th>Service ID</th>
@@ -275,11 +138,13 @@ const AddChargeScreen = () => {
       </table>
 
       {/* Total */}
-      <div>Total: {total}</div>
+      <div className="total">Total: {total}</div>
 
       {/* Buttons */}
-      <button onClick={handleAddCharge}>Add Charge</button>
-      <button onClick={handleFinishCharging}>Finish Charging</button>
+      <div className="button-container">
+        <button className="add-charge-button" onClick={handleAddCharge}>Add Charge</button>
+        <button className="finish-charging-button" onClick={handleFinishCharging}>Finish Charging</button>
+      </div>
     </div>
   );
 };
