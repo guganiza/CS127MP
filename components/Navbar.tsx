@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Navbar/styles.css"; // Import the CSS file for styling
-// import "app/css/Navbar/styles.css"; // Import the CSS file for styling
+// import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Navbar/styles.css"; // Import the CSS file for styling
 
 function Navbar() {
   return (

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Login/styles.css"
-// import "app/css/Login/styles.css"; // Import the CSS file for styling
+// import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Login/styles.css"; // Import the CSS file for styling
 
 const LoginPage = () => {
   return (
@@ -9,7 +9,7 @@ const LoginPage = () => {
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 
       <div>LOGIN</div>
-      <Link href= {"/frontdesk"}> Login as Frontdesk </Link> <br></br>
+      <Link href= {"/checkedin"}> Login as Frontdesk </Link> <br></br>
       <Link href= {"/concierge"}> Login as Concierge </Link> <br></br>
       <Link href= {"/housekeeping"}> Login as Housekeeping </Link> <br></br>
       <Link href= {"/kitchen"}> Login as Kitchen </Link> <br></br>

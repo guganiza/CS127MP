@@ -1,12 +1,13 @@
 'use client'
 import Link from 'next/link';
-// import "app/css/Navbar2/styles.css"; // Import the CSS file for styling
+// import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Navbar2/styles.css"; 
 import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Navbar2/styles.css";
 import React from 'react'
 import Popup from './Popup'
 import { useState } from 'react'
 import ContactScreen from './ContactScreen';
 import NewBooking from '../Popups/NewBooking';
+import Search from '../Popups/Search';
 import AddCharge from '../Popups/AddCharge';
 
 function Navbar({ userRole }: { userRole: string }) {
@@ -36,22 +37,23 @@ function Navbar({ userRole }: { userRole: string }) {
         <img src="https://cdn.discordapp.com/attachments/775346740122484750/1190136677210005524/image.png?ex=65a0b427&is=658e3f27&hm=c7e133280dbe77345c075324008c379963bd31eb7e1d647ec392fec7125650d9&" alt="Your Brand Logo" className="navbar-logo" />
       </Link>
       <ul className="navbar-links">
-        <li>
-          <Link href="/">Home</Link>
-        </li>
       
-
         {userRole === 'frontdesk' && (
-            <><li>
+            <>
+            <li>
+            <Link href="/checkedin">Checked-in Primary Guests</Link>
+            </li>
+            <li>
+            <Link href="/viewguests">View All Guests</Link>
+            </li>
+            <li>
+            <Link href="/bookings">Bookings</Link>
+            </li>
+            <li>
             <button onClick={openSearchPopup}>Search</button>
             {searchPopup && (
               <Popup trigger={searchPopup} setTrigger={closeSearchPopup}>
-              <h3 className='text'>SEARCH</h3>
-              <p>BRN: dropdown</p>
-              <p>Primary guest name:</p>
-              <p>Status:</p>
-              <p>*insert table of charged services*</p>
-              <p>Total bill:</p>
+              <Search />
               </Popup>
             )}
         </li>
@@ -95,7 +97,7 @@ function Navbar({ userRole }: { userRole: string }) {
                 <Link href="/supervisor">Supervisor</Link>
             </li>
             <li>
-                <Link href="/frontdesk">Frontdesk</Link>
+                <Link href="/checkedin">Frontdesk</Link>
             </li>
             <li>
                 <Link href="/housekeeping">Housekeeping</Link>

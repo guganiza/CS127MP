@@ -1,14 +1,10 @@
 .button2{
-    font-style: oblique;
-  }
+  font-style: oblique;
+}
 
-  .supervisor {
-    background-image: url("https://media.discordapp.net/attachments/775346740122484750/1191804534897524737/s.png?ex=65a6c577&is=65945077&hm=49d284ba27e5db1738ffd372a896e79b5bff61a22bd5629456f3cae351912308&=&format=webp&quality=lossless&width=2022&height=1138");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
-
-
- 
+.supervisor {
+  background-image: url("https://media.discordapp.net/attachments/775346740122484750/1191804534897524737/s.png?ex=65a6c577&is=65945077&hm=49d284ba27e5db1738ffd372a896e79b5bff61a22bd5629456f3cae351912308&=&format=webp&quality=lossless&width=2022&height=1138");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
