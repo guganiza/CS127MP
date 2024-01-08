@@ -50,7 +50,7 @@ function Navbar({ userRole }: { userRole: string }) {
             <Link href="/bookings">Bookings</Link>
             </li>
             <li>
-            <button onClick={openSearchPopup}>Search</button>
+            <button className='navbar-buttons' onClick={openSearchPopup}>Search</button>
             {searchPopup && (
               <Popup trigger={searchPopup} setTrigger={closeSearchPopup}>
               <Search />
@@ -58,17 +58,9 @@ function Navbar({ userRole }: { userRole: string }) {
             )}
         </li>
         <li>
-            <button onClick={openBookingPopup}>New Booking</button>
+            <button className = "navbar-buttons" onClick={openBookingPopup}>New Booking</button>
             {bookingPopup && (
               <Popup trigger={bookingPopup} setTrigger={closeBookingPopup}>
-              {/* <h3 className='text'>PRIMARY GUEST</h3>
-              <p>INSERT FORMS</p>
-              <p>Name:</p>
-              <p>Birthday:</p>
-              <p>Age: </p>
-              <p>Contact number:</p>
-              <p>Email address:</p>
-              <button className='button2' onClick={() => setBookingPopup(true)}>Add other guests</button> */}
               <NewBooking />
               </Popup>
             )}
@@ -77,15 +69,9 @@ function Navbar({ userRole }: { userRole: string }) {
 
         {['kitchen', 'concierge', 'housekeeping'].includes(userRole) && (
         <li>
-          <button onClick={() => setButtonPopup(true)}>Add Charge</button>
+          <button className = "navbar-buttons" onClick={() => setButtonPopup(true)}>Add Charge</button>
             {buttonPopup && (
               <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-              {/* <h3 className='text'>Add Charge</h3>
-              <p>Room ID / BRN: dropdown</p>
-              <p>*insert table of services</p>
-              <p>*total bill*</p>
-              <p>*add button to add more rows*</p>
-              <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> */}
               <AddCharge />
               </Popup>
             )}
