@@ -1,0 +1,61 @@
+/* BookingScreen/styles.css */
+
+.booking-screen {
+  background-image: url("https://media.discordapp.net/attachments/775346740122484750/1191804531034558524/fd.png?ex=65a6c576&is=65945076&hm=75c066dd0fd9fe1583ac31b73d025c7609003de7846431c4a976c853c05ee666&=&format=webp&quality=lossless&width=2022&height=1138");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid white;
+  color: black;
+}
+
+th {
+  color: white;
+}
+
+thead {
+  background-color: #473C38;
+}
+
+tbody {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.checkin-button, .cancel-button {
+  padding: 8px 16px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkin-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cancel-button {
+  background-color: maroon;
+  color: white;
+}
+
+.checkin-button:hover {
+  background-color: #45a049;
+}
+
+.cancel-button:hover {
+  background-color: red;
+}

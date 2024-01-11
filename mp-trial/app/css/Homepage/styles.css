@@ -1,0 +1,18 @@
+body {
+  background-image: url("https://cdn.discordapp.com/attachments/775346740122484750/1190122505868935168/CS_127_MP_1.png?ex=65a0a6f4&is=658e31f4&hm=27f1243438ece9dee2273dec6923ae3b96881939c156551ea3eefbed20af9f42&");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.homepageContainer {
+  text-align: center;
+  padding: 20px;
+}
+
+.text{
+  color: rgb(0, 0, 0) ;
+  font-weight: bolder;
+}
+
+
