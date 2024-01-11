@@ -1,5 +1,5 @@
 import React from 'react'
-import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Popup/styles.css"; // Import the CSS file for styling
+import '../../app/css/Popup/styles.css';
 
 function Popup(props){
     return(props.trigger) ? (

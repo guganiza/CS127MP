@@ -120,7 +120,8 @@
 import React, { useState } from 'react';
 import Navbar2 from './Navbar2';
 import Link from 'next/link';
-import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/BookingScreen/styles.css";
+//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/BookingScreen/styles.css";
+import '../../app/css/BookingScreen/styles.css';
 
 
 function BookingScreen() {

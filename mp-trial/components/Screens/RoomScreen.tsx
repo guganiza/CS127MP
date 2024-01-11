@@ -1,5 +1,5 @@
 import React from 'react'
-import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/RoomScreen/styles.css";
+import '../../app/css/RoomScreen/styles.css';
 
 function RoomScreen() {
   return (

@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import "/Users/ASUS/Downloads/CS127MPFrontend/Trial 2/ReactApp/mp-trial/app/css/Navbar2/styles.css"; // Import the CSS file for styling
+import '../../app/css/Navbar2/styles.css';
 import React from 'react'
 import Popup from './Popup'
 import { useState } from 'react'
