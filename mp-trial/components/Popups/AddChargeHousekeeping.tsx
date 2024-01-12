@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './css/AddCharge.css';
 
-const AddChargeScreen = () => {
+const AddChargeHousekeepingScreen = () => {
   // Mock data for room IDs
   const roomIds = ['ABCD123', 'ABCD124'];
 
@@ -24,7 +24,7 @@ const AddChargeScreen = () => {
 
   // Mock data for services and items
   const servicesItems = [
-    { id: '001', name: 'Service A Main' },
+    { id: '001', name: 'Service A Housekeeping' },
     { id: '002', name: 'Service B' },
     { id: '003', name: 'Service C' },
   ];
@@ -149,4 +149,4 @@ const AddChargeScreen = () => {
   );
 };
 
-export default AddChargeScreen;
+export default AddChargeHousekeepingScreen;
