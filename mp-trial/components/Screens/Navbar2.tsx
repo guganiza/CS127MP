@@ -8,6 +8,9 @@ import ContactScreen from './ContactScreen';
 import NewBooking from '../Popups/NewBooking';
 import Search from '../Popups/Search';
 import AddCharge from '../Popups/AddCharge';
+import AddChargeHousekeeping from "@/components/Popups/AddChargeHousekeeping";
+import AddChargeKitchen from "@/components/Popups/AddChargeKitchen";
+import AddChargeConcierge from "@/components/Popups/AddChargeConcierge";
 
 function Navbar({ userRole }: { userRole: string }) {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -74,21 +77,72 @@ function Navbar({ userRole }: { userRole: string }) {
         </li></>
         )}
 
-        {['kitchen', 'concierge', 'housekeeping'].includes(userRole) && (
-        <li>
-          <button onClick={() => setButtonPopup(true)}>Add Charge</button>
-            {buttonPopup && (
-              <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-              {/* <h3 className='text'>Add Charge</h3>
+        {/*{['kitchen', 'concierge', 'housekeeping'].includes(userRole) && (*/}
+        {/*<li>*/}
+        {/*  <button onClick={() => setButtonPopup(true)}>Add Charge</button>*/}
+        {/*    {buttonPopup && (*/}
+        {/*      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>*/}
+        {/*      /!* <h3 className='text'>Add Charge</h3>*/}
+        {/*      <p>Room ID / BRN: dropdown</p>*/}
+        {/*      <p>*insert table of services</p>*/}
+        {/*      <p>*total bill*</p>*/}
+        {/*      <p>*add button to add more rows*</p>*/}
+        {/*      <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> *!/*/}
+        {/*      <AddCharge />*/}
+        {/*      </Popup>*/}
+        {/*    )}*/}
+        {/*</li>*/}
+        {/*)}*/}
+
+        {['housekeeping'].includes(userRole) && (
+            <li>
+              <button onClick={() => setButtonPopup(true)}>Add Charge</button>
+              {buttonPopup && (
+                  <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    {/* <h3 className='text'>Add Charge</h3>
               <p>Room ID / BRN: dropdown</p>
               <p>*insert table of services</p>
               <p>*total bill*</p>
               <p>*add button to add more rows*</p>
               <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> */}
-              <AddCharge />
-              </Popup>
-            )}
-        </li>
+                    <AddChargeHousekeeping/>
+                  </Popup>
+              )}
+            </li>
+        )}
+
+        {['kitchen'].includes(userRole) && (
+            <li>
+              <button onClick={() => setButtonPopup(true)}>Add Charge</button>
+              {buttonPopup && (
+                  <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    {/* <h3 className='text'>Add Charge</h3>
+              <p>Room ID / BRN: dropdown</p>
+              <p>*insert table of services</p>
+              <p>*total bill*</p>
+              <p>*add button to add more rows*</p>
+              <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> */}
+                    <AddChargeKitchen />
+                  </Popup>
+              )}
+            </li>
+        )}
+
+        {['concierge'].includes(userRole) && (
+            <li>
+              <button onClick={() => setButtonPopup(true)}>Add Charge</button>
+              {buttonPopup && (
+                  <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    {/* <h3 className='text'>Add Charge</h3>
+              <p>Room ID / BRN: dropdown</p>
+              <p>*insert table of services</p>
+              <p>*total bill*</p>
+              <p>*add button to add more rows*</p>
+              <button className='button2' onClick={() => setButtonPopup(true)}>FINISH CHARGING</button> */}
+                    <AddChargeConcierge />
+                  </Popup>
+              )}
+            </li>
         )}
 
         {userRole === 'supervisor' && (
