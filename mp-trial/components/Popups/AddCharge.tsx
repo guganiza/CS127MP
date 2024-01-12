@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/components/Popups/css/AddCharge.css";
 import './css/AddCharge.css';
 
 const AddChargeScreen = () => {

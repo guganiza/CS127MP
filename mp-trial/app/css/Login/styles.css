@@ -24,3 +24,10 @@ body, div, a {
   margin-bottom: 10px; /* Example margin between links */
   /* Add any additional styles for the links */
 }
+
+.loginform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optional: Adjust to your layout */
+}

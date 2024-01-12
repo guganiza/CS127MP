@@ -96,10 +96,10 @@
 // CheckedinScreen.js
 import React, { useState } from 'react';
 import Navbar2 from './Navbar2';
-//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/CheckedinScreen/styles.css";
 import '../../app/css/CheckedinScreen/styles.css';
 
 const CheckedinScreen = () => {
+  console.log(localStorage);
   const [checkedInGuests, setCheckedInGuests] = useState([
     {
       brnId: '123',

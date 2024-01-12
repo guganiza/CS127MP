@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/components/Popups/css/NewBooking.css";
 import './css/NewBooking.css';
 
 const BookingForm = () => {

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-//import "/Users/davidraphael/Documents/CS127/CS127MP/mp/app/css/Navbar/styles.css"; // Import the CSS file for styling
 import '../app/css/Navbar/styles.css';
 
 function Navbar() {

@@ -96,7 +96,7 @@ function Navbar({ userRole }: { userRole: string }) {
                 <Link href="/supervisor">Supervisor</Link>
             </li>
             <li>
-                <Link href="/checkedin">Frontdesk</Link>
+                <Link href="/supervisor/checkedin">Frontdesk</Link>
             </li>
             <li>
                 <Link href="/housekeeping">Housekeeping</Link>
