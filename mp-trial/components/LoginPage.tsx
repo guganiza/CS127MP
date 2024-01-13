@@ -60,7 +60,7 @@ function LoginPage(){
           //localStorage.setItem('roleid', '5');  //navigate(`/home/${username}`);
         }
       } else {
-        throw new Error('Invalid fgghghgusername or password');
+        throw new Error('Invalid username or password');
       } // INDE PA TO AYOS
     } catch (error) {
       if (error.message === 'Invalid username or password') {

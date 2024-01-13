@@ -1,4 +1,16 @@
-import BookingScreen from '@/components/Screens/BookingScreen'
+import CheckedinScreen from '@/components/Screens/CheckedinScreen'
+import React from 'react'
+
+function page() {
+  return (
+    <CheckedinScreen />
+  )
+}
+
+export default page
+
+
+/*{import BookingScreen from '@/components/Screens/BookingScreen'
 import React from 'react'
 
 function page() {
@@ -7,4 +19,4 @@ function page() {
   )
 }
 
-export default page
+export default page}*/

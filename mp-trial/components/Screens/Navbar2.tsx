@@ -43,13 +43,10 @@ function Navbar({ userRole }: { userRole: string }) {
         {userRole === 'frontdesk' && (
             <>
             <li>
-            <Link href="/checkedin">Checked-in Guests</Link>
+            <Link href="/bookings">Bookings</Link>
             </li>
             <li>
             <Link href="/viewguests">View Guests</Link>
-            </li>
-            <li>
-            <Link href="/bookings">Bookings</Link>
             </li>
             <li>
             <button onClick={openSearchPopup}>Search</button>
