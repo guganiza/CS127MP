@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
+import Navbar from './Navbar';
 import '../app/css/Login/styles.css';
 
 function LoginPage(){
@@ -31,21 +32,19 @@ function LoginPage(){
         },
         method: 'POST',
         body: JSON.stringify({
-          employee_id: username,  // assuming username corresponds to employee_id
+          employee_id: username, 
           password: password,
         }),
       });
   
-      if (response.ok) { // const roleID = await response.text(); // Assuming roleID is directly returned as text
+      if (response.ok) { 
         //const roleID = await response.text(); // Assuming roleID is a number
         const data = await response.json();
         const roleID = data;
         console.log('Role ID: ', roleID);
   
         if (roleID === 1) {
-          router.push('/checkedin'); // Redirect to the supervisor page
-          // Store it in the local storage
-          //localStorage.setItem('roleid', '1');
+          router.push('/checkedin');
         }
         else if(roleID === 2){
           router.push('/housekeeping');
@@ -61,11 +60,11 @@ function LoginPage(){
           //localStorage.setItem('roleid', '5');  //navigate(`/home/${username}`);
         }
       } else {
-        throw new Error('Account not yet verified');
+        throw new Error('Invalid fgghghgusername or password');
       } // INDE PA TO AYOS
     } catch (error) {
-      if (error.message === 'Account not yet verified') {
-        window.alert('Account not yet verified');
+      if (error.message === 'Invalid username or password') {
+        console.log('Invalid username or password');
       } else {
         window.alert('Invalid username or password');
       }
@@ -74,19 +73,22 @@ function LoginPage(){
   
 
   return (
-    <div className="loginform">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input type="text" name="username" id="username" value={username} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input type="password" name="password" id="password" value={password} onChange={handleChange} required />
-        </div>
-        <button className="login-button" type="submit">Login</button>
-        <p className="error-message">{error}</p>
-      </form>
+    <div>
+      <Navbar />
+      <div className="loginform">
+            <form className="login-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="username">Username:</label>
+                <input type="text" name="username" id="username" value={username} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <input type="password" name="password" id="password" value={password} onChange={handleChange} required />
+              </div>
+              <button className="login-button" type="submit">Login</button>
+              <p className="error-message">{error}</p>
+            </form>
+      </div>
     </div>
   );
 }
