@@ -19,19 +19,22 @@ function ViewGuestsScreen() {
 
   // Function to handle fetching secondary guests based on BRN ID (replace with actual API call)
   const fetchSecondaryGuests = () => {
-    fetch(`http://localhost:8080/myapp/brn/secondaryguestsBRNCODE?BRNCODE=${brnCode}`)
-    .then((response) => response.json())
-    .then((data) => {
-      // Check if data is an array and not empty
-      if (Array.isArray(data) && data.length > 0) {
-        setSecondaryGuests(data);
-      } else {
-        setSecondaryGuests([]);
-      }
-      console.log('API Response:', data);
-      console.log('Secondary guests:', secondaryGuests);
-    })
-    .catch((error) => console.error('Error fetching employee data:', error));
+      fetch(`http://localhost:8080/myapp/brn/secondaryguestsBRNCODE?BRNCODE=${brnCode}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Check if data is an array and not empty
+            if (Array.isArray(data) && data.length > 0) {
+              console.log("test " + data);
+              setSecondaryGuests(data);
+            } else {
+              setSecondaryGuests([]);
+            }
+            console.log('API Response:', data);
+            console.log('Secondary guests:', secondaryGuests);
+          })
+          .catch((error) => console.error('Error fetching employee data:', error));
+
+
   };
 
   return (
@@ -52,7 +55,7 @@ function ViewGuestsScreen() {
             <tr>
               <th>Name</th>
               <th>Birthday</th>
-              <th>Age</th>
+              {/*<th>Age</th>*/}
               <th>Address</th>
               <th>Contact Number</th>
               <th>Email address</th>
@@ -63,7 +66,8 @@ function ViewGuestsScreen() {
               <tr key={brn.sguest_ID}>
                 <td>{brn.firstName + brn.lastName}</td>
                 <td>{brn.birthday}</td>
-                <td>{brn.age}</td>
+
+                {/*<td>{brn.age}</td>*/}
                 <td>{brn.address}</td>
                 <td>{brn.contactNumber}</td>
                 <td>{brn.emailAddress}</td>
