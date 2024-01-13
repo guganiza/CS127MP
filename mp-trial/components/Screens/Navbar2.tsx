@@ -150,13 +150,13 @@ function Navbar({ userRole }: { userRole: string }) {
                 <Link href="/supervisor/checkedin">Frontdesk</Link>
             </li>
             <li>
-                <Link href="/housekeeping">Housekeeping</Link>
+                <Link href="/supervisor/housekeeping">Housekeeping</Link>
             </li>
             <li>
-                <Link href="/kitchen">Kitchen</Link>
+                <Link href="/supervisor/kitchen">Kitchen</Link>
             </li>
             <li>
-                <Link href="/concierge">Concierge</Link>
+                <Link href="/supervisor/concierge">Concierge</Link>
             </li></>
         )}
 

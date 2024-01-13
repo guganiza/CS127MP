@@ -1,11 +1,11 @@
 /* CheckedInScreen.css */
 
 .checkedin-screen {
-    background-image: url("https://media.discordapp.net/attachments/775346740122484750/1191804531034558524/fd.png?ex=65a6c576&is=65945076&hm=75c066dd0fd9fe1583ac31b73d025c7609003de7846431c4a976c853c05ee666&=&format=webp&quality=lossless&width=2022&height=1138");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+  background-image: url("https://media.discordapp.net/attachments/775346740122484750/1195559603010809957/frontdesk.png?ex=65b46ea5&is=65a1f9a5&hm=82b44e01a9b603d81c9cbf245659e7ac470aac90415b57b9da01f9fa4b7e8ba8&=&format=webp&quality=lossless&width=1664&height=936");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
   .table {
     width: 100%; 
     margin-top: 20px;

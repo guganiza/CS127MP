@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Navbar2 from './Navbar2';
 import '../../app/css/ViewGuestsScreen/styles.css';
+import BackButton from '../BackButton';
 
 
 function ViewGuestsScreen() {
@@ -76,6 +77,7 @@ function ViewGuestsScreen() {
           </tbody>
         </table>
       </body>
+      <BackButton/>
     </div>
   );
 }

@@ -107,7 +107,7 @@ const BookingForm = () => {
 
     console.log('Booking finished:', { primaryGuest, additionalGuests, bookingDetails });
     // You can perform additional actions here as needed
-
+    window.location.reload();
 
     //setBookingCompleted(true);
   };

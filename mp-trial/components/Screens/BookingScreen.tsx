@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Navbar2 from './Navbar2';
 import Link from 'next/link';
 import '../../app/css/BookingScreen/styles.css';
+import BackButton from '../BackButton';
 
 
 function BookingScreen() {
@@ -79,6 +80,7 @@ function BookingScreen() {
           </tbody>
         </table>
       </body>
+      <BackButton/>
     </div>
   );
 }

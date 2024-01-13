@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navbar2 from './Navbar2';
 import '../../app/css/CheckedinScreen/styles.css';
+import BackButton from '../BackButton';
 
 const CheckedinScreen = () => {
   const router = useRouter();
@@ -97,6 +98,7 @@ const CheckedinScreen = () => {
           </tbody>
       </table>
       </body>
+      <BackButton/>
     </div>
   );
 };

@@ -5,7 +5,9 @@
   padding: 1rem;
   background-color: #473C38;
   font-family: 'EB Garamond', serif;
-  margin-top: 138px;
+  margin-top: 137px;
+  position:sticky;
+  top:0;
 }
 
 .navbar1-logo {

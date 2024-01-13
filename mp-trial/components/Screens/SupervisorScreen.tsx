@@ -77,7 +77,7 @@ function SupervisorScreen() {
               <tr key={employee.employeeID}>
                 <td>{employee.first_Name}</td>
                 <td>{employee.last_Name}</td>
-                <td>{employee.employee_Role.role_Name}</td>
+                <td>{employee.employee_Role.roleName}</td>
                 <td>{employee.salary}</td>
                 <td>
                 <button onClick={() => handleButtonClick(employee.employeeID)}>

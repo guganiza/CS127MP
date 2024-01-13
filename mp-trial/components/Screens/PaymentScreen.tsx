@@ -4,8 +4,15 @@ import Navbar2 from './Navbar2'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react';
 import '../../app/css/PaymentScreen/styles.css';
+import { useRouter } from 'next/navigation';
 
 const PaymentScreen = () => {
+  const router = useRouter();
+
+  // Use the router to get the query parameters
+  //const { brncode } = router.query;
+  
+  
   const [paymentMethod, setPaymentMethod] = useState('Cash');
   const [cardNumber, setCardNumber] = useState('');
   const [cvv, setCVV] = useState('');
@@ -16,23 +23,38 @@ const PaymentScreen = () => {
   };
 
   const handleFinishPayment = async () => {
-    try { // CHANGE STATUS AND SAVE DETAILS!!!!!!!!!!!!!!!
-      const response = await fetch('http://your-backend-api-endpoint', {
+    try {
+      // First, save payment details
+    
+      const paymentResponse = await fetch('http://localhost:8080/myapp/payment/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          ///brncode,
           paymentMethod,
           cardNumber,
           cvv,
           expirationDate,
         }),
       });
-
-      if (response.ok) {
+  
+      if (paymentResponse.ok) {
         console.log('Payment successful');
-        // You can add logic here for additional actions after successful payment
+        
+        // Now, update the status to 'CHECKEDOUT'
+        const statusResponse = await fetch(`http://localhost:8080/myapp/brn/changestatusCODE?BRNCODE=${brnCode}&status=CHECKEDOUT`, {
+          method: 'PUT',
+        });
+  
+        if (statusResponse.ok) {
+          console.log('Status updated to CHECKEDOUT');
+          // You can add logic here for additional actions after updating the status
+        } else {
+          console.error('Error updating status to CHECKEDOUT');
+          // Handle error scenarios, such as showing an error message to the user
+        }
       } else {
         console.error('Payment failed');
         // Handle error scenarios, such as showing an error message to the user
@@ -42,6 +64,7 @@ const PaymentScreen = () => {
       // Handle network or other errors
     }
   };
+  
 
   return (
     <div className='payment'>
