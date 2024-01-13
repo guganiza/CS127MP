@@ -6,7 +6,8 @@ const BookingForm = () => {
     name: '',
     birthday: '',
     contactNumber: '',
-    emailAddress: '',
+    emailAddress: '', homeAddress: ''
+
   });
 
   const [additionalGuests, setAdditionalGuests] = useState([]);
@@ -46,11 +47,69 @@ const BookingForm = () => {
     setBookingDetails({ ...bookingDetails, roomNumbers });
   };
 
-  const handleFinishBooking = () => {
+  const handleFinishBooking = async () => {
     // Add logic to handle the finishing of booking, e.g., send data to the server
+    try {
+      // Prepare the data to send to the server
+      //---------------------------------------
+      const bookingData = {
+        primary_guest: {
+          first_name: primaryGuest.name,
+          last_name: ' ', // Add the last name as needed
+          birthday: primaryGuest.birthday,
+          address: primaryGuest.homeAddress, // Add the address as needed
+          contact_number: primaryGuest.contactNumber,
+          email_address: primaryGuest.emailAddress,
+        },
+        guest_names: additionalGuests.map((guest) => ({
+          first_name: guest.name,
+          last_name: ' ', // Add the last name as needed
+          birthday: guest.birthday,
+          address: guest.homeAddress, // Add the address as needed
+          contact_number: guest.contactNumber,
+          email_address: guest.emailAddress,
+        })),
+        booking_date: bookingDetails.bookingDate,
+        check_in_date: bookingDetails.checkInDate,
+        check_out_date: bookingDetails.checkOutDate,
+        rooms: bookingDetails.roomNumbers.map((roomNumber) => ({
+          //doesn't work!!
+          room_id: roomNumber,
+          //room_id: 21
+        })),
+      };
+
+      // Make a POST request to your Spring Boot endpoint
+      const response = await fetch('http://localhost:8080/myapp/brn/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      // Check if the request was successful (status code 2xx)
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Booking added:', result);
+        //------------------------------
+        // You can perform additional actions here as needed
+        //setBookingCompleted(true);
+      } else {
+        console.error('Failed to add booking:', response.statusText);
+        // Handle the error or show a user-friendly message
+      }
+    } catch (error) {
+      console.error('Error during booking:', error);
+      // Handle the error or show a user-friendly message
+    }
+
+
     console.log('Booking finished:', { primaryGuest, additionalGuests, bookingDetails });
     // You can perform additional actions here as needed
-    setBookingCompleted(true);
+
+
+    //setBookingCompleted(true);
   };
 
   return (
@@ -64,12 +123,15 @@ const BookingForm = () => {
         <input type="date" name="birthday" value={primaryGuest.birthday} onChange={handlePrimaryGuestChange} required />
         <label>Contact Number:</label>
         <input type="text" name="contactNumber" value={primaryGuest.contactNumber} onChange={handlePrimaryGuestChange} required />
+        <label>Home Address:</label>
+        <input type="text" name="homeAddress" value={primaryGuest.homeAddress} onChange={handlePrimaryGuestChange} required />
         <label>Email Address:</label>
         <input type="email" name="emailAddress" value={primaryGuest.emailAddress} onChange={handlePrimaryGuestChange} required />
       </form>
 
       {/* Additional Guests Form */}
       {showAdditionalGuests && (
+
         <div>
           <h2>Additional Guests</h2>
           {additionalGuests.map((guest, index) => (
@@ -80,6 +142,8 @@ const BookingForm = () => {
               <input type="date" name="birthday" value={guest.birthday} onChange={(e) => handleAdditionalGuestChange(index, e)} required />
               <label>Contact Number:</label>
               <input type="text" name="contactNumber" value={guest.contactNumber} onChange={(e) => handleAdditionalGuestChange(index, e)} />
+              <label>Home Address:</label>
+              <input type="text" name="homeAddress" value={guest.homeAddress} onChange={(e)=>handleAdditionalGuestChange(index,e)} required />
               <label>Email Address:</label>
               <input type="email" name="emailAddress" value={guest.emailAddress} onChange={(e) => handleAdditionalGuestChange(index, e)} />
             </form>
@@ -102,11 +166,12 @@ const BookingForm = () => {
         <label>Check-out Date:</label>
         <input type="date" name="checkOutDate" value={bookingDetails.checkOutDate} onChange={handleBookingDetailsChange} required />
         <label>Room Type:</label>
-        <select name="roomType" value={bookingDetails.roomType} onChange={handleBookingDetailsChange} required>
+        <select name="roomType"  value={bookingDetails.roomType} onChange={handleBookingDetailsChange} required>
           <option value="">Select Room Type</option>
-          <option value="Deluxe">Deluxe</option>
-          <option value="Twin">Twin</option>
-          <option value="Suite">Suite</option>
+          <option value="1">Deluxe</option>
+          <option value="2">Grand</option>
+          <option value="3">Suite</option>
+          <option value="4">Executive</option>
         </select>
         <label>Number of Rooms:</label>
         <input type="number" name="numberOfRooms" value={bookingDetails.numberOfRooms} onChange={handleBookingDetailsChange} />
