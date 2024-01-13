@@ -175,14 +175,14 @@ const BookingForm = () => {
         </select>
         <label>Number of Rooms:</label>
         <input type="number" name="numberOfRooms" value={bookingDetails.numberOfRooms} onChange={handleBookingDetailsChange} />
-        <label>Room Numbers:</label>
-        <select multiple name="roomNumbers" onChange={handleRoomNumberChange} value={bookingDetails.roomNumbers}>
-          {bookingDetails.roomNumbers.map((roomNumber) => (
-            <option key={roomNumber} value={roomNumber}>
-              {roomNumber}
-            </option>
-          ))}
-        </select>
+        {/*<label>Room Numbers:</label>*/}
+        {/*<select multiple name="roomNumbers" onChange={handleRoomNumberChange} value={bookingDetails.roomNumbers}>*/}
+        {/*  {bookingDetails.roomNumbers.map((roomNumber) => (*/}
+        {/*    <option key={roomNumber} value={roomNumber}>*/}
+        {/*      {roomNumber}*/}
+        {/*    </option>*/}
+        {/*  ))}*/}
+        {/*</select>*/}
       </form>
       {/* "Finish Booking" Button */}
       <button className='common-button' onClick={handleFinishBooking}>Finish Booking</button>  
