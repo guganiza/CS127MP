@@ -67,7 +67,8 @@ const PaymentScreen = () => {
   
 
   return (
-    <div className='payment'>
+    <div>
+      <body className='payment'>
       <Navbar2 userRole={'frontdesk'} />
       <label htmlFor="paymentMethod">Payment Method:</label>
       <select id="paymentMethod" value={paymentMethod} onChange={handlePaymentMethodChange}>
@@ -104,6 +105,8 @@ const PaymentScreen = () => {
       )}
 
       <button onClick={handleFinishPayment}>Finish Payment</button>
+      </body>
+     
     </div>
   );
 };
